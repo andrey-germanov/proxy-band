@@ -13,7 +13,9 @@ export const Users = () => {
   } = userAPI.useFetchAllUsersQuery(limitUsers);
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setLimitUsers(Number(e.target.value));
+    const input = Number(e.target.value);
+    if (input === 0) setLimitUsers(1);
+    setLimitUsers(input);
   };
   return (
     <div>
