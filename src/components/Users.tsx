@@ -23,25 +23,16 @@ export const Users = () => {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeInput(e)}
         value={limitUsers}
       />
-      <span style={{ fontSize: "12px", opacity: ".5", }}>
-        type limit user
-      </span>
-      {error && <div>some error</div>}
-      {isLoading && <Spin size={"large"} />}
+      <span style={{ fontSize: "12px", opacity: ".5" }}>type limit user</span>
+      {error && <div style={{ color: "red" }}>some error</div>}
+      {isLoading && (
+        <div>
+          <Spin size={"large"} />
+        </div>
+      )}
       {users?.map((user, key) => {
         return (
-          <div
-            key={key}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "20px",
-              margin: "10px",
-              border: "1px solid #e3cfcf",
-              fontSize: "12px",
-            }}
-          >
+          <div key={key} className="user">
             {user.id}. {user.name}
             <div>
               <Button type="link">

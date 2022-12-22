@@ -6,7 +6,7 @@ import { Users } from "./components/Users";
 
 const App = () => {
   return (
-    <div>
+    <div className="text-center">
       <BrowserRouter>
         <Routes>
           <Route path={`/`} element={<Users />} />

@@ -11,18 +11,14 @@ export const Posts = () => {
     error,
   } = postAPI.useFetchPostsByIdQuery(numberId);
   return (
-    <div>
+    <div className="text-center">
       {isLoading && <div>"loading..."</div>}
       {error && <div>some error</div>}
       {posts?.map((item, key) => {
         return (
           <div
             key={key}
-            style={{
-              padding: "20px",
-              border: "1px solid #e3cfcf",
-              fontSize: "12px",
-            }}
+            className="post"
           >
             <div style={{ textAlign: "left" }}>
               <strong>Title</strong>: {item.title}
