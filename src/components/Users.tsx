@@ -14,7 +14,7 @@ export const Users = () => {
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = Number(e.target.value);
-    if (input === 0) setLimitUsers(1);
+    if (input === 0) return setLimitUsers(1);
     setLimitUsers(input);
   };
   return (
